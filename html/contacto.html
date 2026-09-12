@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contáctanos | BIOGONZA SRL</title>
+  <meta name="description" content="Contacta a BIOGONZA SRL por teléfono, WhatsApp o correo. Solicita una cotización por tus materiales reciclables.">
+  <meta property="og:title" content="Contáctanos | BIOGONZA SRL">
+  <meta property="og:description" content="¿Tienes materiales para vender? Estamos aquí para ayudarte.">
+  <meta property="og:type" content="website">
+   <link rel="icon" type="image/png" href="../img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/banner-footer.css">
+
+</head>
+<body>
+
+   <!-- Contenedor para el banner -->
+ <div id="banner-container"></div>
+
+
+
+  <section class="page-hero">
+    <div class="page-hero__glow" aria-hidden="true"></div>
+    <div class="container page-hero__grid">
+      <div class="page-hero__content">
+        
+        <h1>Contáctanos</h1>
+        <p>¿Tienes materiales para vender? Estamos aquí para ayudarte.</p>
+        <div class="page-hero__acciones">
+          <a href="tel:+18090000000" class="btn btn--verde btn--grande"><i class="fa-solid fa-phone"></i> Llamar ahora</a>
+          <a href="https://wa.me/18090000000" class="btn btn--borde btn--grande wa-link" data-msg="Hola, BIOGONZA SRL. Quiero más información." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+      <div class="page-hero__visual" aria-hidden="true">
+        <img src="../img/Arbol.png" alt="" class="page-hero__img page-hero__img--libre">
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="container contacto-grid">
+
+      <!-- Datos de contacto -->
+      <div class="contacto-datos">
+        <div class="dato reveal">
+          <span class="dato__icono"><i class="fa-solid fa-phone"></i></span>
+          <div>
+            <h3>Teléfono</h3>
+            <!-- Edita este dato con el teléfono real -->
+            <p>(809) 000-0000</p>
+          </div>
+        </div>
+        <div class="dato reveal">
+          <span class="dato__icono"><i class="fa-brands fa-whatsapp"></i></span>
+          <div>
+            <h3>WhatsApp</h3>
+            <!-- Edita este dato con el WhatsApp real -->
+            <p><a href="https://wa.me/18090000000" class="wa-link enlace-verde" data-msg="Hola, BIOGONZA SRL." target="_blank" rel="noopener">(809) 000-0000</a></p>
+          </div>
+        </div>
+        <div class="dato reveal">
+          <span class="dato__icono"><i class="fa-solid fa-envelope"></i></span>
+          <div>
+            <h3>Correo electrónico</h3>
+            <!-- Edita este dato con el correo real -->
+            <p>info@biogonza.com</p>
+          </div>
+        </div>
+        <div class="dato reveal">
+          <span class="dato__icono"><i class="fa-solid fa-location-dot"></i></span>
+          <div>
+            <h3>Ubicación</h3>
+            <p>BIOGONZA SRL — República Dominicana</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="form-caja reveal">
+        <h2>Solicita tu cotización</h2>
+        <p>Completa el formulario y te atenderemos por WhatsApp.</p>
+        <form id="formCotizacion" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre <span>*</span></label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+            <small class="error" aria-live="polite"></small>
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono <span>*</span></label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 809-000-0000" required>
+            <small class="error" aria-live="polite"></small>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo <span>*</span></label>
+            <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+            <small class="error" aria-live="polite"></small>
+          </div>
+          <div class="campo-fila">
+            <div class="campo">
+              <label for="material">Material que desea vender <span>*</span></label>
+              <select id="material" name="material" required>
+                <option value="">Selecciona un material</option>
+                <option>Cobre</option>
+                <option>Aluminio</option>
+                <option>Metales / Hierro / Acero</option>
+                <option>Plásticos</option>
+                <option>Baterías</option>
+                <option>Chatarra</option>
+                <option>Cartón</option>
+                <option>Otro material</option>
+              </select>
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="campo">
+              <label for="cantidad">Cantidad aproximada <span>*</span></label>
+              <input type="text" id="cantidad" name="cantidad" placeholder="Ej: 50 libras, 2 sacos..." required>
+              <small class="error" aria-live="polite"></small>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos más detalles (opcional)"></textarea>
+          </div>
+          <button type="submit" class="btn btn--verde btn--grande btn--full">
+            <i class="fa-brands fa-whatsapp"></i> Solicitar cotización
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Mapa -->
+  <section class="seccion seccion--clara seccion--sin-top">
+    <div class="container">
+      <div class="seccion__cabecera reveal">
+       
+        <h2>BIOGONZA SRL</h2>
+        <p>Visítanos en nuestra ubicación o escríbenos para coordinar tu entrega.</p>
+      </div>
+      <div class="mapa-wrap reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17993.76491961001!2d-69.79045199198862!3d18.541410875952018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf850050836a8f%3A0x21e48cb46b686dc2!2sBiogonza%20SRL!5e0!3m2!1ses-419!2sdo!4v1788993838925!5m2!1ses-419!2sdo"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Ubicación de BIOGONZA SRL en Google Maps"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenedor para el footer -->
+  <div id="footer-container"></div>
+
+  <!-- Script para cargar banner y footer desde un solo archivo -->
+  <script src="../js/banner-footer.js"></script>
+
+
+
+  <a href="https://wa.me/18090000000" class="wa-flotante wa-link" data-msg="Hola, BIOGONZA SRL. Me gustaría recibir información." target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
