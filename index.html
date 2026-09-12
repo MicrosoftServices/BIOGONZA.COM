@@ -36,7 +36,7 @@
 
     <a class="bf-logo" href="index.html">
       <div class="bf-logo-ring">
-        <img src="img/nombre1.png" alt="BIOGONZA">
+        <img src="img/nombre1.png" alt="HIMANABI">
       </div>
     </a>
 
@@ -76,6 +76,10 @@
     </div></a>
 
     <ul class="bf-overlay-links">
+      <li style="--i:1"><a href="index.html" class="bf-nav-link">
+        <span class="bf-ol-text">Inicio</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a></li>
       <li style="--i:2"><a href="html/materiales.html" class="bf-nav-link">
         <span class="bf-ol-text">Materiales</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -84,12 +88,12 @@
         <span class="bf-ol-text">Servicios</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a></li>
-      <li style="--i:1"><a href="html/nosotros.html" class="bf-nav-link">
+      <li style="--i:4"><a href="html/nosotros.html" class="bf-nav-link">
         <span class="bf-ol-text">Nosotros</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a></li>
 
-      <li style="--i:4"><a href="html/contacto.html" class="bf-nav-link">
+      <li style="--i:5"><a href="html/contacto.html" class="bf-nav-link">
         <span class="bf-ol-text">Contactos</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a></li>
@@ -390,7 +394,7 @@
     var overlay     = document.getElementById('bf-overlay');
     var overlayBg   = document.getElementById('bf-overlay-bg');
     var closeBtn    = document.getElementById('bf-overlay-close');
-    var navLinks    = document.querySelectorAll('.bf-nav-link');
+    var navLinks    = overlay.querySelectorAll('a');
 
     /* ─── 1. SCROLL: sombra + ocultar/mostrar header ─── */
     var lastScrollY  = window.pageYOffset;
