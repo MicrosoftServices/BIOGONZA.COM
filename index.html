@@ -16,14 +16,99 @@
   <link rel="stylesheet" href="css/index.css">
   
   <link rel="stylesheet" href="css/banner-footer.css">
+  <style>
+    /* Estas 2 reglas pertenecen al header inteligente (ocultar al bajar, mostrar al subir).
+       Si prefieres, muévelas dentro de css/banner-footer.css y borra este bloque. */
+    .bf-site-header {
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.3s ease;
+    }
+    .bf-site-header.bf-header--hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
 
- 
-<!-- Contenedor para el banner -->
- <div id="banner-container"></div>
+<!-- ========== HEADER ========== -->
+<header class="bf-site-header" id="bf-header">
+  <div class="bf-container bf-header-inner">
 
+    <a class="bf-logo" href="index.html">
+      <div class="bf-logo-ring">
+        <img src="img/nombre1.png" alt="HIMANABI">
+      </div>
+    </a>
 
+    <nav class="bf-navbar" id="bf-navbar">
+      <ul>
+        <li><a href="html/materiales.html"><i class="fas fa-bullseye"></i>Materiales</a></li>
+        <li><a href="html/servicios.html"><i class="fas fa-cogs"></i> Servicios</a></li>
+        <li><a href="html/nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+        <li><a href="html/contacto.html" class="bf-nav-btn"><i class="fas fa-envelope"></i> Contactos</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón hamburguesa -->
+    <button class="bf-menu-toggle" id="bf-menu-toggle"
+            aria-label="Abrir menú" aria-expanded="false" type="button">
+      <span class="bf-burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== OVERLAY MÓVIL ========== -->
+<div class="bf-mobile-overlay" id="bf-overlay" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <div class="bf-overlay-bg" id="bf-overlay-bg"></div>
+
+  <button class="bf-overlay-close" id="bf-overlay-close" aria-label="Cerrar menú" type="button">
+    <i class="fas fa-times" aria-hidden="true"></i>
+  </button>
+
+  <nav class="bf-overlay-nav">
+    <div class="bf-overlay-logo">
+      <img src="img/nombre1.png" alt="HIMANABI">
+    </div>
+
+    <ul class="bf-overlay-links">
+      <li style="--i:2"><a href="html/materiales.html" class="bf-nav-link">
+        <span class="bf-ol-text">Materiales</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a></li>
+      <li style="--i:3"><a href="html/servicios.html" class="bf-nav-link">
+        <span class="bf-ol-text">Servicios</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a></li>
+      <li style="--i:1"><a href="html/nosotros.html" class="bf-nav-link">
+        <span class="bf-ol-text">Nosotros</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a></li>
+
+      <li style="--i:4"><a href="html/contacto.html" class="bf-nav-link">
+        <span class="bf-ol-text">Contactos</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a></li>
+    </ul>
+
+    <div class="bf-overlay-social">
+      <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+      </a>
+      <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="#" aria-label="TikTok" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <p class="bf-overlay-lema">"Frase para integrar "</p>
+  </nav>
+</div>
 
   <!-- ============ HERO ============ -->
   <section class="hero">
@@ -209,12 +294,276 @@
     </div>
   </section>
 
-  <div id="footer-container"></div>
+  <!-- ========== FOOTER ========== -->
+  <footer class="bf-site-footer">
+    <div class="bf-container">
+      <div class="bf-footer-main">
 
-  <!-- Script para cargar banner y footer desde un solo archivo -->
-  <script src="js/banner-footer.js"></script>
+        <!-- Col 1: Brand -->
+        <div class="bf-footer-col bf-footer-about">
+          <a class="bf-footer-brand" href="index.html" aria-label="Ir al inicio – BIOGONZA">
+            <img src="img/nombre1.png" alt="Logo BIOGONZA">
+          </a>
+          <p class="bf-footer-desc"></p>
+          <p class="bf-footer-lema"> </p>
+        </div>
 
+        <!-- Col 2: Links -->
+        <div class="bf-footer-col bf-footer-links">
+          <h4 class="bf-footer-heading">
+            <span>Explora</span>
+            <div class="bf-footer-heading-line"></div>
+          </h4>
+          <ul>
+            <li><a href="html/materiales.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Materiales</a></li>
+            <li><a href="html/servicios.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Servicios</a></li>
+            <li><a href="html/nosotros.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Nosotros</a></li>
+            <li><a href="html/contacto.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contactos</a></li>
+          </ul>
+        </div>
 
+        <!-- Col 3: Contacto + Redes -->
+        <div class="bf-footer-col bf-footer-connect">
+          <h4 class="bf-footer-heading">
+            <span>Conéctate</span>
+            <div class="bf-footer-heading-line"></div>
+          </h4>
+          <ul class="bf-footer-contact-list">
+            <li>
+              <a href="mailto:biogonzard@gmail.com">
+                <span class="bf-contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                <span>biogonzard@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/18090000000" target="_blank" rel="noopener">
+                <span class="bf-contact-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></span>
+                <span>+1 (809) 000 0000</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Redes: iconos blancos sin fondo -->
+          <div class="bf-footer-social-row">
+            <a href="#" class="bf-fs-icon bf-fs-fb"
+               aria-label="Facebook" target="_blank" rel="noopener">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="bf-fs-icon bf-fs-ig"
+               aria-label="Instagram" target="_blank" rel="noopener">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="bf-fs-icon bf-fs-tk" aria-label="TikTok" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /.bf-footer-main -->
+
+      <div class="bf-footer-divider">
+        <svg class="bf-footer-curve-line" viewBox="0 0 800 20" preserveAspectRatio="none"
+             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0,14 Q400,2 800,14"
+                fill="none" stroke="#268538" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="bf-footer-divider-icon" aria-hidden="true">
+          <i class="fas fa-graduation-cap"></i>
+        </span>
+      </div>
+
+      <div class="bf-footer-copyright">
+        <p>&copy; 2026 <strong>BIOGONZA</strong>. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script del banner y footer: menú hamburguesa, header inteligente y olas -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ─── Elementos ─────────────────────────────────── */
+    var header      = document.getElementById('bf-header');
+    var menuToggle  = document.getElementById('bf-menu-toggle');
+    var overlay     = document.getElementById('bf-overlay');
+    var overlayBg   = document.getElementById('bf-overlay-bg');
+    var closeBtn    = document.getElementById('bf-overlay-close');
+    var navLinks    = document.querySelectorAll('.bf-nav-link');
+
+    /* ─── 1. SCROLL: sombra + ocultar/mostrar header ─── */
+    var lastScrollY  = window.pageYOffset;
+    var ticking      = false;
+    var headerHidden = false;
+
+    function updateHeader() {
+      var currentY = window.pageYOffset;
+
+      if (currentY <= 10) {
+        if (headerHidden) {
+          headerHidden = false;
+          header.classList.remove('bf-header--hidden');
+        }
+        header.classList.remove('scrolled');
+        lastScrollY = currentY;
+        ticking = false;
+        return;
+      }
+
+      header.classList.toggle('scrolled', currentY > 40);
+
+      var delta = currentY - lastScrollY;
+
+      if (delta > 8 && !headerHidden) {
+        headerHidden = true;
+        header.classList.add('bf-header--hidden');
+      } else if (delta < -8 && headerHidden) {
+        headerHidden = false;
+        header.classList.remove('bf-header--hidden');
+      }
+
+      lastScrollY = currentY;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateHeader);
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchstart', function () {
+      lastScrollY = window.pageYOffset;
+    }, { passive: true });
+
+    /* ─── 2. MENÚ HAMBURGUESA ────────────────────────── */
+    var isOpen = false;
+
+    function openMenu() {
+      if (isOpen) return;
+      isOpen = true;
+      overlay.classList.add('open');
+      menuToggle.classList.add('is-open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      var firstLink = overlay.querySelector('a, button');
+      if (firstLink) {
+        setTimeout(function () { firstLink.focus(); }, 400);
+      }
+    }
+
+    function closeMenu() {
+      if (!isOpen) return;
+      isOpen = false;
+      overlay.classList.remove('open');
+      menuToggle.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      menuToggle.focus();
+    }
+
+    function handleToggle(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      isOpen ? closeMenu() : openMenu();
+    }
+
+    menuToggle.addEventListener('click',      handleToggle);
+    menuToggle.addEventListener('touchstart', handleToggle, { passive: false });
+
+    function handleClose(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeMenu();
+    }
+
+    closeBtn.addEventListener('click',      handleClose);
+    closeBtn.addEventListener('touchstart', handleClose, { passive: false });
+
+    function handleBgTap(e) {
+      if (e.target === overlayBg || e.target === overlay) {
+        e.preventDefault();
+        closeMenu();
+      }
+    }
+
+    overlay.addEventListener('click',      handleBgTap);
+    overlay.addEventListener('touchstart', handleBgTap, { passive: false });
+
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+      link.addEventListener('touchend', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isOpen) closeMenu();
+    });
+
+    /* ─── 3. OLAS ANIMADAS DEL FOOTER (opcional) ─────── */
+    var canvas = document.getElementById('bf-wave-canvas');
+    if (!canvas) return;
+
+    var ctx   = canvas.getContext('2d');
+    var tick  = 0;
+    var animId;
+
+    var waves = [
+      { amp: 22, period: 0.011, speed: 0.022, phase: 0.0, baseY: 0.50, color: 'rgba(245,230,211,0.65)' },
+      { amp: 15, period: 0.018, speed: 0.014, phase: 2.3, baseY: 0.65, color: 'rgba(245,230,211,0.38)' },
+      { amp: 28, period: 0.008, speed: 0.009, phase: 4.7, baseY: 0.38, color: 'rgba(245,230,211,0.20)' }
+    ];
+
+    function resizeCanvas() {
+      var rect = canvas.parentElement.getBoundingClientRect();
+      canvas.width  = Math.round(rect.width)  || window.innerWidth;
+      canvas.height = Math.round(rect.height) || 90;
+    }
+
+    function drawWave(w) {
+      var W = canvas.width;
+      var H = canvas.height;
+      var base = H * w.baseY;
+
+      ctx.beginPath();
+      ctx.moveTo(0, H);
+
+      for (var x = 0; x <= W; x += 2) {
+        var y = base
+          + Math.sin(x * w.period + tick * w.speed + w.phase) * w.amp
+          + Math.sin(x * w.period * 1.65 + tick * w.speed * 0.55 + w.phase + 1.2) * (w.amp * 0.4);
+        ctx.lineTo(x, y);
+      }
+
+      ctx.lineTo(W, H);
+      ctx.closePath();
+      ctx.fillStyle = w.color;
+      ctx.fill();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      waves.forEach(drawWave);
+      tick++;
+      animId = requestAnimationFrame(animate);
+    }
+
+    resizeCanvas();
+    animate();
+
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        cancelAnimationFrame(animId);
+        resizeCanvas();
+        tick = 0;
+        animate();
+      }, 150);
+    }, { passive: true });
+
+  })();
+  </script>
 
   <!-- Botón flotante de WhatsApp -->
   <a href="https://wa.me/18090000000" class="wa-flotante wa-link" data-msg="Hola, BIOGONZA SRL. Me gustaría recibir información." target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
